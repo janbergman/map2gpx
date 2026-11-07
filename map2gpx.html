@@ -491,7 +491,7 @@ async function save(){
  state.busy=true;const isMap=state.phase==='calibrate',base=state.name.replace(/\.[^.]+$/,'');update('Förbereder filen för hämtning …');
  try{
   const archive=await kmz(!isMap);
-  if(isMap){download(archive,`${base}_map2gpx.kmz`,'application/vnd.google-earth.kmz');state.phase='start';}
+  if(isMap){download(archive,`${base}_map.kmz`,'application/vnd.google-earth.kmz');state.phase='start';}
   else{const bundle=fflate.zipSync({[`${base}_course.kmz`]:[archive,{level:0}],[`${base}_course.gpx`]:fflate.strToU8(gpx())},{level:1});download(bundle,`${base}_map2gpx.zip`,'application/zip');}
   state.dirty=false;state.pending=null;
   update(isMap?'Kartkopian är klar för hämtning. Klicka nu i starttriangelns centrum.':'KMZ + GPX ligger tillsammans i ZIP-filen. Öppna ZIP-filen i Finder. Alla GPX-punkter är utan banordning. Om hämtningen inte startade, använd länken nedan.');
