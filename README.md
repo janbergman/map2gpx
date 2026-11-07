@@ -1,11 +1,23 @@
-# Map2GPX 2
+# Map2GPX
 
 Turn an orienteering map with a printed course into a georeferenced KMZ and GPX control points. Runs in your browser as a single HTML file, with instructions at the bottom of the map.
 
-**[Open Map2GPX 2](https://janbergman.github.io/map2gpx2/map2gpx2.html)** · **[Instructions and example](https://janbergman.github.io/map2gpx2/)**
+**[Open Map2GPX](https://janbergman.github.io/map2gpx/map2gpx.html)** · **[Instructions and example](https://janbergman.github.io/map2gpx/)**
 
 # Orienteering training run
 Use the app **[EasyTrails](https://www.easytrailsgps.com)** and download the .gpx file to get a beep when you are close to any controls (in any order).
+
+### Run with GPX in EasyTrails
+
+Unzip the Map2GPX download, transfer the **_course.gpx** file to your iPhone, and open/import it in EasyTrails as waypoints. Enable waypoint proximity alarms in EasyTrails to receive an alert near a control. The points have no required visit order. See the [EasyTrails features](https://www.easytrailsgps.com/features/) for waypoint import and proximity alarms.
+
+### Run with a KMZ map in Orienteering Companion
+
+Transfer the exported **_course.kmz** to your iPhone and import it as a georeferenced map in **[Orienteering Companion](https://www.khapplications.se/en/)**. It includes the map and the visible course markings, so you can use it for training with your position on the map. If you want a map for drawing a new course in the app, use the first calibrated **_map2gpx.kmz** instead. Map2GPX's GPX points are unordered; the KMZ's printed controls are map artwork and are not a guaranteed editable Companion course. Set up any course or control order you need in Companion.
+
+### Start Map2GPX
+
+Click **Open Map2GPX** above to run it online. Alternatively download **map2gpx.html** and double-click it to open it in Safari or Chrome. No installation is required. Use **O** to open your map and **S** to save; **H** shows help.
 
 
 ## Getting started
@@ -41,7 +53,7 @@ Use the app **[EasyTrails](https://www.easytrailsgps.com)** and download the .gp
 
 ## Local use and privacy
 
-Only **map2gpx2.html** is needed to run the program. Download that file and open it in a modern browser; no Python, installation or local server is required. The file is about 15 MB because OpenCV and its WebAssembly code are bundled inside it.
+Only **map2gpx.html** is needed to run the program. Download that file and open it in a modern browser; no Python, installation or local server is required. The file is about 15 MB because OpenCV and its WebAssembly code are bundled inside it.
 
 Your map image, detection and export are processed locally in the browser. Internet access is needed for OpenTopoMap and place search. Original map files are not modified. Keep your exported KMZ: it includes the original image and editable points, so you can reopen your work.
 
