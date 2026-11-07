@@ -4,7 +4,9 @@ Turn an orienteering map with a printed course into a georeferenced KMZ and GPX 
 
 **[Open Map2GPX 2](https://janbergman.github.io/map2gpx2/map2gpx2.html)** · **[Instructions and example](https://janbergman.github.io/map2gpx2/)**
 
-![Detected course points on an example orienteering map](course-example.png)
+# Orienteering training run
+Use the app **[EasyTrails](https://www.easytrailsgps.com)** and download the .gpx file to get a beep when you are close to any controls (in any order).
+
 
 ## Getting started
 
@@ -45,15 +47,6 @@ Your map image, detection and export are processed locally in the browser. Inter
 
 Opening a file and entering full screen are separate actions. Use **F11** after opening the file. On the GitHub file page, use **Download raw file** to obtain the standalone HTML.
 
-## Verification
-
-26 browser regression tests passed in Chrome and Playwright WebKit (Safari's browser engine) on an ARM Mac, using the actual standalone HTML file with external requests blocked. Separate live tests checked file selection, full screen, OpenTopoMap and place search.
-
-On the **261003 Tuna Lång-DM skräddarbacken ÖS5** reference map, comparison against the original GPX found **10/10 unique matching points**, with **no extra detections**: one start, eight controls and one finish. Maximum error was **3.00 m in Chrome** and **2.03 m in WebKit**, within the same 5 m tolerance used for the Python version. Exported KMZ corners agreed with the original within **1 mm**. Exports contain no GPX routes or tracks.
-
-The tests also cover two start triangles, manual edits, undo, rescan, corner adjustment after deep zoom, visible instructions, and reopening exported KMZ files. These results describe this reference example; always review detections and alignment on your own map.
-
-[Detailed verification results](verification.json)
 
 ## Svenska – kort handledning
 
