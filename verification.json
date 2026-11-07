@@ -1,0 +1,213 @@
+{
+  "verified_at": "2026-11-07T09:11:51.101097+00:00",
+  "html_sha256": "e8e3f3a65bbee0e9b0e4144fd95ed21bd461d70c3f0cbacecc13ad63d4af366d",
+  "browser_reports": [
+    {
+      "browser": "chrome",
+      "version": "157.0.8103.39",
+      "html_sha256": "e8e3f3a65bbee0e9b0e4144fd95ed21bd461d70c3f0cbacecc13ad63d4af366d",
+      "tests": [
+        {
+          "name": "self-contained file loads offline, Stockholm, no buttons, visible status",
+          "milliseconds": 719
+        },
+        {
+          "name": "PNG opens, place text is visible, keyboard commands do not fire while typing",
+          "milliseconds": 915
+        },
+        {
+          "name": "one anchor after extreme zoom auto-fits; real corner drag preserves anchor",
+          "milliseconds": 3861
+        },
+        {
+          "name": "deep zoom preserves source location and georeferencing",
+          "milliseconds": 2496
+        },
+        {
+          "name": "georeferenced KMZ imports without recalibration and saves a map copy",
+          "milliseconds": 2593
+        },
+        {
+          "name": "ring clicks auto-scan, find three controls, two triangles and one finish",
+          "milliseconds": 1419
+        },
+        {
+          "name": "manual ring editing, selected thick ring, delete, undo and extra start",
+          "milliseconds": 1216
+        },
+        {
+          "name": "ring-template cancel preserves points; invalid white edge does not scan",
+          "milliseconds": 562
+        },
+        {
+          "name": "successful rescan preserves manual starts and can be undone",
+          "milliseconds": 316
+        },
+        {
+          "name": "unsaved file-open guard and small-screen status remain visible",
+          "milliseconds": 409
+        },
+        {
+          "name": "Tuna Livelox real map, same manual ring sample, automatic OpenCV scan",
+          "milliseconds": 10198
+        },
+        {
+          "name": "exported KMZ restores editable points and exact calibration",
+          "milliseconds": 4622
+        },
+        {
+          "name": "invalid file rolls back without losing current map",
+          "milliseconds": 655
+        }
+      ],
+      "errors": [],
+      "renderer": "webgl",
+      "scan": {
+        "raw": 9,
+        "radius": 28.21999963124593,
+        "controls": 8,
+        "starts": 1,
+        "waypoints_only": true,
+        "milliseconds": 1565.4000000953674
+      },
+      "offline": true,
+      "independent_audit": {
+        "points": 10,
+        "unique_matches": 10,
+        "false_detections": 0,
+        "errors_m": [
+          1.100400382293948e-05,
+          3.0014573883084195,
+          0.6948481768678032,
+          1.3567771661418109,
+          1.3887161660829546,
+          1.8099985796525926,
+          0.44132921649337653,
+          1.0274932602319247,
+          0.5135964575495763,
+          0.4404328242098326
+        ],
+        "max_error_m": 3.0014573883084195,
+        "mean_error_m": 1.0674660239542113,
+        "max_corner_error_m": 2.934129397942052e-09,
+        "max_kml_corner_error_m": 4.434199358722302e-08,
+        "routes": 0,
+        "tracks": 0,
+        "python_project_compatible": true
+      }
+    },
+    {
+      "browser": "webkit",
+      "version": "27.2",
+      "html_sha256": "e8e3f3a65bbee0e9b0e4144fd95ed21bd461d70c3f0cbacecc13ad63d4af366d",
+      "tests": [
+        {
+          "name": "self-contained file loads offline, Stockholm, no buttons, visible status",
+          "milliseconds": 625
+        },
+        {
+          "name": "PNG opens, place text is visible, keyboard commands do not fire while typing",
+          "milliseconds": 312
+        },
+        {
+          "name": "one anchor after extreme zoom auto-fits; real corner drag preserves anchor",
+          "milliseconds": 604
+        },
+        {
+          "name": "deep zoom preserves source location and georeferencing",
+          "milliseconds": 607
+        },
+        {
+          "name": "georeferenced KMZ imports without recalibration and saves a map copy",
+          "milliseconds": 592
+        },
+        {
+          "name": "ring clicks auto-scan, find three controls, two triangles and one finish",
+          "milliseconds": 961
+        },
+        {
+          "name": "manual ring editing, selected thick ring, delete, undo and extra start",
+          "milliseconds": 353
+        },
+        {
+          "name": "ring-template cancel preserves points; invalid white edge does not scan",
+          "milliseconds": 341
+        },
+        {
+          "name": "successful rescan preserves manual starts and can be undone",
+          "milliseconds": 437
+        },
+        {
+          "name": "unsaved file-open guard and small-screen status remain visible",
+          "milliseconds": 381
+        },
+        {
+          "name": "Tuna Livelox real map, same manual ring sample, automatic OpenCV scan",
+          "milliseconds": 8195
+        },
+        {
+          "name": "exported KMZ restores editable points and exact calibration",
+          "milliseconds": 1590
+        },
+        {
+          "name": "invalid file rolls back without losing current map",
+          "milliseconds": 142
+        }
+      ],
+      "errors": [],
+      "renderer": "webgl",
+      "scan": {
+        "raw": 10,
+        "radius": 28.440000534057617,
+        "controls": 9,
+        "starts": 1,
+        "waypoints_only": true,
+        "milliseconds": 1984
+      },
+      "offline": true,
+      "independent_audit": {
+        "points": 10,
+        "unique_matches": 10,
+        "false_detections": 0,
+        "errors_m": [
+          1.0534101499693216,
+          0.2260133374541249,
+          0.6948481768678032,
+          1.3567771661418109,
+          2.028010216327208,
+          1.8099985796525926,
+          0.44132921649337653,
+          1.0274932602319247,
+          0.5135964575495763,
+          0.4404328242098326
+        ],
+        "max_error_m": 2.028010216327208,
+        "mean_error_m": 0.9591909384897571,
+        "max_corner_error_m": 2.934129397942052e-09,
+        "max_kml_corner_error_m": 4.434199358722302e-08,
+        "routes": 0,
+        "tracks": 0,
+        "python_project_compatible": true
+      }
+    }
+  ],
+  "reference_files_unchanged": true,
+  "network_tests": [
+    {
+      "browser": "chrome",
+      "fullscreen": true,
+      "initial_click_opens_file": true,
+      "place_search_passed": true,
+      "successful_map_tiles": 49,
+      "errors": []
+    },
+    {
+      "browser": "webkit",
+      "fullscreen": true,
+      "initial_click_opens_file": true,
+      "place_search_passed": true,
+      "successful_map_tiles": 56,
+      "errors": []
+    }
+  ]
+}
