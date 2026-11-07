@@ -11,10 +11,6 @@ Use the app **[EasyTrails](https://www.easytrailsgps.com)** and download the .gp
 
 Unzip the Map2GPX download, transfer the **_course.gpx** file to your iPhone, and open/import it in EasyTrails as waypoints. Enable waypoint proximity alarms in EasyTrails to receive an alert near a control. The points have no required visit order. See the [EasyTrails features](https://www.easytrailsgps.com/features/) for waypoint import and proximity alarms.
 
-### Run with a KMZ map in Orienteering Companion
-
-Transfer the exported **_course.kmz** to your iPhone and import it as a georeferenced map in **[Orienteering Companion](https://www.khapplications.se/en/)**. It includes the map and the visible course markings, so you can use it for training with your position on the map. If you want a map for drawing a new course in the app, use the first calibrated **_map2gpx.kmz** instead. Map2GPX's GPX points are unordered; the KMZ's printed controls are map artwork and are not a guaranteed editable Companion course. Set up any course or control order you need in Companion.
-
 ### Start Map2GPX
 
 Click **Open Map2GPX** above to run it online. Alternatively download **map2gpx.html** and double-click it to open it in Safari or Chrome. No installation is required. Use **O** to open your map and **S** to save; **H** shows help.
