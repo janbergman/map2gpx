@@ -81,7 +81,7 @@ const instructions={
  anchor_image:'2 · Klicka på en tydlig plats i kartbilden. Zooma för precision. G: sök ort · Tab: OpenTopoMap.',
  anchor_map:'2 · Klicka på samma plats i OpenTopoMap. G: sök ort eller koordinater · Tab: kartbild · Esc: välj om bildpunkten.',
  calibrate:'3 · Dra ett blått bildhörn för storlek och rotation kring ankaret. F: hela kartan · A: nytt ankare · S: spara karta och fortsätt.',
- start:'4 · Klicka i mitten av starttriangeln. Nyp, rulla eller +/−: zooma in för precision.',
+ start:'4 · Klicka i mitten av starttriangeln. Ingen starttriangel? N: fortsätt direkt till kontrollring. Nyp, rulla eller +/−: zoom.',
  extra_start:'Klicka i mitten av ytterligare en starttriangel. Esc: avbryt.',
  ring_center:'5 · Klicka i centrum av en riktig kontrollring. Välj en ring med vit kartbakgrund längs en del av kanten.',
  ring_edge:'5 · Zooma in tills ringens färg syns tydligt. Klicka mitt i ringkantens färgade linje, på en del där kartbakgrunden är vit. Skanningen startar automatiskt. Esc: välj om centrum.',
@@ -429,15 +429,17 @@ view.addEventListener('wheel',e=>{e.preventDefault();const p=local(e);zoom(Math.
 let gestureScale=1;
 view.addEventListener('gesturestart',e=>{e.preventDefault();gestureScale=1;});
 view.addEventListener('gesturechange',e=>{e.preventDefault();zoom(e.scale/gestureScale);gestureScale=e.scale;});
-function remove(){if(state.busy||state.phase!=='review'||state.selected<0)return;remember();state.points.splice(state.selected,1);state.selected=-1;if(!state.points.some(p=>p.kind==='start'))state.phase='start';update('Punkten är borttagen. Cmd+Z ångrar.');}
-function reference(){if(state.busy||!state.matrix||!state.points.some(p=>p.kind==='start'))return;state.beforeReference=snapshot();state.phase='ring_center';state.ringCenter=null;state.selected=-1;update('Välj en ny ringmall. Efter skanningen ersätts de detekterade punkterna. Manuella starter behålls. Cmd+Z ångrar.');}
-function chooseStart(extra=false){if(state.busy||!state.matrix)return;state.phase=extra?'extra_start':'start';state.selected=-1;update('');}
+function remove(){if(state.busy||state.phase!=='review'||state.selected<0)return;remember();state.points.splice(state.selected,1);state.selected=-1;update('Punkten är borttagen. Cmd+Z ångrar.');}
+function reference(){if(state.busy||!state.matrix||!['start','review','ring_center','ring_edge'].includes(state.phase))return;if(['start','review'].includes(state.phase))state.beforeReference=snapshot();state.phase='ring_center';state.ringCenter=null;state.selected=-1;update('Välj en ringmall. Efter skanningen ersätts de detekterade punkterna. Manuella starter behålls. Cmd+Z ångrar.');}
+function skipStart(){if(state.phase==='start')reference();}
+function chooseStart(extra=false){if(state.busy||!state.matrix)return;state.beforeReference=null;state.ringCenter=null;state.phase=extra?'extra_start':'start';state.selected=-1;update('');}
 function escape(){
  if(search.style.display==='block'){endSearch();return;}if(state.pending){state.pending=null;update('');return;}if(state.busy)return;
  if(drag){restore(drag.snapshot);drag=null;return;}
  if(state.beforeReference){restore(state.beforeReference);state.beforeReference=null;state.ringCenter=null;update('Ny ringmall avbruten. Tidigare punkter finns kvar.');}
  else if(state.phase==='ring_edge'){state.phase='ring_center';state.ringCenter=null;update('Välj ringcentrum igen.');}
- else if(['extra_start','start'].includes(state.phase)&&state.points.some(p=>p.kind==='start')){state.phase=state.radius?'review':'ring_center';update('');}
+ else if(['extra_start','start'].includes(state.phase)&&(state.points.length||state.radius)){state.phase=state.radius?'review':'ring_center';update('');}
+ else if(state.phase==='extra_start'){state.phase='start';update('');}
  else if(state.phase==='anchor_map'){state.phase='anchor_image';state.anchorPixel=null;showingImage=true;fit();update('');}
 }
 function beginSearch(){if(!state.source||state.busy)return;search.style.display='block';search.value='';search.focus();update('');}
@@ -502,15 +504,15 @@ document.addEventListener('keydown',e=>{
  if((e.metaKey||e.ctrlKey)&&k==='z'){e.preventDefault();undo();return;}
  if((e.metaKey||e.ctrlKey)&&!['s','o'].includes(k))return;
  if(k===' '){spaceDown=true;e.preventDefault();return;}
- const handled=['o','s','f','g','r','t','a','h','l','escape','delete','backspace','tab','f11','+','=','-','d'];if(!handled.includes(k))return;e.preventDefault();
+ const handled=['o','s','f','g','r','t','n','a','h','l','escape','delete','backspace','tab','f11','+','=','-','d'];if(!handled.includes(k))return;e.preventDefault();
  if(k==='escape'){escape();return;}if(k==='f11'){fullscreen();return;}
  if(k==='+'||k==='='){zoom(1.5);return;}if(k==='-'){zoom(1/1.5);return;}
  if(state.pending){if(k==='d'){const p=state.pending;state.pending=null;state.dirty=false;if(p.kind==='drop')load(p.file);else picker();}else if(k==='s')save();update();return;}
- if(k==='o')open();else if(k==='s')save();else if(k==='f')fit();else if(k==='g')beginSearch();else if(k==='r')reference();else if(k==='t')chooseStart(e.shiftKey);
+ if(k==='o')open();else if(k==='s')save();else if(k==='f')fit();else if(k==='g')beginSearch();else if(k==='r')reference();else if(k==='t')chooseStart(e.shiftKey);else if(k==='n')skipStart();
  else if(k==='delete'||k==='backspace')remove();else if(k==='a'&&!state.busy&&state.source){remember();state.anchorPixel=null;state.phase='anchor_image';showingImage=true;fit();update('Välj ett nytt bildankare. Kontrollpunkterna behåller sina bildpositioner.');}
  else if(k==='tab'&&['anchor_image','anchor_map'].includes(state.phase)){showingImage=!showingImage;if(showingImage)fit();else autoFit=false;update();}
  else if(k==='l'){for(const [key,t] of tiles)if(t.failed)tiles.delete(key);state.tilesFailed=false;update('Försöker hämta bakgrundskartan igen.');}
- else if(k==='h')update('O: öppna · S: spara · G: sök ort · F: hela kartan · +/− eller rulla/nyp: zoom · Dra tom yta eller håll mellanslag: panorera · Cmd+Z: ångra · R: välj ny ringmall och skanna om · T: välj start · Skift+T: extra start · F11: fullskärm. GPX sparas alltid utan banordning.');
+ else if(k==='h')update('O: öppna · S: spara · G: sök ort · F: hela kartan · +/− eller rulla/nyp: zoom · Dra tom yta eller håll mellanslag: panorera · Cmd+Z: ångra · R: välj ny ringmall och skanna om · T: välj start · N: hoppa över start · Skift+T: extra start · F11: fullskärm. GPX sparas alltid utan banordning.');
 });
 document.addEventListener('keyup',e=>{if(e.key===' ')spaceDown=false;});
 window.addEventListener('blur',()=>{spaceDown=false;});

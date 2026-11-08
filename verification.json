@@ -1,67 +1,71 @@
 {
-  "verified_at": "2026-11-08T02:59:41.843084+00:00",
-  "html_sha256": "3a79c4d147fe5d1c698050c11e38eca871fb95dfc89933434b94367ec6f42f74",
+  "verified_at": "2026-11-08T09:21:41.540485+00:00",
+  "html_sha256": "9da3a9335d474047a2812674ce6d2ea1586ab287ccd7e427ac10948cf292f443",
   "browser_reports": [
     {
       "browser": "chrome",
       "version": "157.0.8103.39",
-      "html_sha256": "3a79c4d147fe5d1c698050c11e38eca871fb95dfc89933434b94367ec6f42f74",
+      "html_sha256": "9da3a9335d474047a2812674ce6d2ea1586ab287ccd7e427ac10948cf292f443",
       "tests": [
         {
           "name": "self-contained file loads offline, Stockholm, no buttons, visible status",
-          "milliseconds": 283
+          "milliseconds": 196
         },
         {
           "name": "PNG opens, place text is visible, keyboard commands do not fire while typing",
-          "milliseconds": 1090
+          "milliseconds": 968
         },
         {
           "name": "one anchor after extreme zoom auto-fits; real corner drag preserves anchor",
-          "milliseconds": 8474
+          "milliseconds": 1982
         },
         {
           "name": "deep zoom preserves source location and georeferencing",
-          "milliseconds": 1935
+          "milliseconds": 1175
         },
         {
           "name": "georeferenced KMZ goes directly to start without saving or recalibrating",
-          "milliseconds": 558
+          "milliseconds": 226
         },
         {
           "name": "ring clicks auto-scan, find three controls, two triangles and one finish",
-          "milliseconds": 1896
+          "milliseconds": 974
         },
         {
           "name": "manual ring editing, selected thick ring, delete, undo and extra start",
-          "milliseconds": 8140
+          "milliseconds": 523
         },
         {
           "name": "ring-template cancel preserves points; invalid white edge does not scan",
-          "milliseconds": 1943
+          "milliseconds": 309
         },
         {
           "name": "successful rescan preserves manual starts and can be undone",
-          "milliseconds": 1269
+          "milliseconds": 626
         },
         {
           "name": "unsaved file-open guard and small-screen status remain visible",
-          "milliseconds": 831
+          "milliseconds": 406
         },
         {
           "name": "Tuna Livelox real map, same manual ring sample, automatic OpenCV scan",
-          "milliseconds": 11588
+          "milliseconds": 6027
         },
         {
           "name": "exported KMZ restores editable points and exact calibration",
-          "milliseconds": 1891
+          "milliseconds": 789
         },
         {
           "name": "invalid file rolls back without losing current map",
-          "milliseconds": 651
+          "milliseconds": 89
         },
         {
           "name": "real Stangtjarn rescan removes cross-hatching rings and false starts",
-          "milliseconds": 13431
+          "milliseconds": 6783
+        },
+        {
+          "name": "no start triangle: skip, scan, export, reopen, edit and rescan",
+          "milliseconds": 3252
         }
       ],
       "errors": [],
@@ -72,7 +76,7 @@
         "controls": 8,
         "starts": 1,
         "waypoints_only": true,
-        "milliseconds": 1814.1999998092651
+        "milliseconds": 1084.8000001907349
       },
       "hatching": {
         "before_points": 21,
@@ -88,8 +92,16 @@
           "controls": 19,
           "starts": 1,
           "waypoints_only": true,
-          "milliseconds": 2634.7000000476837
+          "milliseconds": 1338
         }
+      },
+      "no_start": {
+        "controls": 3,
+        "finishes": 1,
+        "starts": 0,
+        "exported_waypoints": 4,
+        "reopened": true,
+        "editing_and_rescan": true
       },
       "offline": true,
       "independent_audit": {
@@ -120,63 +132,67 @@
     {
       "browser": "webkit",
       "version": "27.2",
-      "html_sha256": "3a79c4d147fe5d1c698050c11e38eca871fb95dfc89933434b94367ec6f42f74",
+      "html_sha256": "9da3a9335d474047a2812674ce6d2ea1586ab287ccd7e427ac10948cf292f443",
       "tests": [
         {
           "name": "self-contained file loads offline, Stockholm, no buttons, visible status",
-          "milliseconds": 230
+          "milliseconds": 437
         },
         {
           "name": "PNG opens, place text is visible, keyboard commands do not fire while typing",
-          "milliseconds": 414
+          "milliseconds": 261
         },
         {
           "name": "one anchor after extreme zoom auto-fits; real corner drag preserves anchor",
-          "milliseconds": 432
+          "milliseconds": 401
         },
         {
           "name": "deep zoom preserves source location and georeferencing",
-          "milliseconds": 592
+          "milliseconds": 617
         },
         {
           "name": "georeferenced KMZ goes directly to start without saving or recalibrating",
-          "milliseconds": 165
+          "milliseconds": 206
         },
         {
           "name": "ring clicks auto-scan, find three controls, two triangles and one finish",
-          "milliseconds": 667
+          "milliseconds": 1585
         },
         {
           "name": "manual ring editing, selected thick ring, delete, undo and extra start",
-          "milliseconds": 393
+          "milliseconds": 398
         },
         {
           "name": "ring-template cancel preserves points; invalid white edge does not scan",
-          "milliseconds": 275
+          "milliseconds": 272
         },
         {
           "name": "successful rescan preserves manual starts and can be undone",
-          "milliseconds": 330
+          "milliseconds": 367
         },
         {
           "name": "unsaved file-open guard and small-screen status remain visible",
-          "milliseconds": 216
+          "milliseconds": 286
         },
         {
           "name": "Tuna Livelox real map, same manual ring sample, automatic OpenCV scan",
-          "milliseconds": 3109
+          "milliseconds": 4207
         },
         {
           "name": "exported KMZ restores editable points and exact calibration",
-          "milliseconds": 890
+          "milliseconds": 1077
         },
         {
           "name": "invalid file rolls back without losing current map",
-          "milliseconds": 24
+          "milliseconds": 22
         },
         {
           "name": "real Stangtjarn rescan removes cross-hatching rings and false starts",
-          "milliseconds": 6057
+          "milliseconds": 6157
+        },
+        {
+          "name": "no start triangle: skip, scan, export, reopen, edit and rescan",
+          "milliseconds": 1696
         }
       ],
       "errors": [],
@@ -187,7 +203,7 @@
         "controls": 8,
         "starts": 1,
         "waypoints_only": true,
-        "milliseconds": 812
+        "milliseconds": 1197
       },
       "hatching": {
         "before_points": 21,
@@ -203,8 +219,16 @@
           "controls": 19,
           "starts": 1,
           "waypoints_only": true,
-          "milliseconds": 1685
+          "milliseconds": 1518
         }
+      },
+      "no_start": {
+        "controls": 3,
+        "finishes": 1,
+        "starts": 0,
+        "exported_waypoints": 4,
+        "reopened": true,
+        "editing_and_rescan": true
       },
       "offline": true,
       "independent_audit": {

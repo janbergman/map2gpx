@@ -21,7 +21,7 @@ Click **Open Map2GPX** above to run it online. Alternatively download **map2gpx.
 1. Click the welcome screen or press **O**. Open a calibrated **KMZ** (for example from Livelox), or a **JPG/PNG** map with a printed course.
 2. For an uncalibrated image, select a recognizable point in the image and the same place in OpenTopoMap. **G** searches for a place or accepts latitude, longitude. **Tab** switches between the image and background map.
 3. For an uncalibrated image, drag a blue image corner to adjust scale and rotation around the anchor. Check alignment at several places. **S** downloads a calibrated map copy named **…_map.kmz**. An already calibrated KMZ keeps its calibration and goes straight to selecting the start, without saving another copy.
-4. Click the centre of the start triangle.
+4. Click the centre of the start triangle. **If there is no start triangle, press N to skip directly to selecting a control ring.** No artificial start point is added.
 5. Click the centre of any control circle. **Zoom in until the printed colour is clearly visible, then click in the middle of the coloured ring stroke where the map background is white.** Radius and colour are sampled together; scanning starts automatically.
 6. Review the small blue markers. **S** downloads a ZIP containing both **KMZ and GPX**. Unzip it in Finder or your file manager.
 
@@ -42,6 +42,7 @@ Click **Open Map2GPX** above to run it online. Alternatively download **map2gpx.
 | Undo, including a rescan | **Cmd+Z / Ctrl+Z** |
 | Choose a new ring sample and rescan | **R** |
 | Reselect first start / add another start | **T / Shift+T** |
+| Continue without a start triangle | **N** at the start-selection step |
 | Choose a new geographic anchor | **A** |
 | Open / save | **O / S** |
 | Cancel / help | **Esc / H** |
@@ -58,7 +59,7 @@ Opening a file and entering full screen are separate actions. Use **F11** after 
 
 ## Svenska – kort handledning
 
-Öppna programmet och följ statusraden längst ned. **O** öppnar karta och **S** sparar. För JPG/PNG förankrar du först en bildpunkt mot samma plats i OpenTopoMap, justerar med hörnen och sparar kartan. Markera sedan starten, ett kontrollcentrum och ringkanten. **Zooma in och klicka mitt i den färgade ringkanten där kartbakgrunden är vit.** Skanningen startar automatiskt. Granska, rätta vid behov och spara ZIP-filen med KMZ och GPX. Kontrollerna sparas alltid utan banordning. **R** väljer ny ringmall och skannar om; **Cmd+Z** ångrar.
+Öppna programmet och följ statusraden längst ned. **O** öppnar karta och **S** sparar. För JPG/PNG förankrar du först en bildpunkt mot samma plats i OpenTopoMap, justerar med hörnen och sparar kartan. Markera sedan starten, eller tryck **N** om starttriangel saknas. Välj därefter ett kontrollcentrum och ringkanten. **Zooma in och klicka mitt i den färgade ringkanten där kartbakgrunden är vit.** Skanningen startar automatiskt. Granska, rätta vid behov och spara ZIP-filen med KMZ och GPX. Kontrollerna sparas alltid utan banordning. **R** väljer ny ringmall och skannar om; **Cmd+Z** ångrar.
 
 ## Libraries and map credits
 
