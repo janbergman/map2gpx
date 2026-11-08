@@ -20,7 +20,7 @@ Click **Open Map2GPX** above to run it online. Alternatively download **map2gpx.
 
 1. Click the welcome screen or press **O**. Open a calibrated **KMZ** (for example from Livelox), or a **JPG/PNG** map with a printed course.
 2. For an uncalibrated image, select a recognizable point in the image and the same place in OpenTopoMap. **G** searches for a place or accepts latitude, longitude. **Tab** switches between the image and background map.
-3. Drag a blue image corner to adjust scale and rotation around the anchor. Check alignment at several places. **S** downloads a calibrated map copy named **…_map.kmz**. An imported KMZ uses its existing calibration.
+3. For an uncalibrated image, drag a blue image corner to adjust scale and rotation around the anchor. Check alignment at several places. **S** downloads a calibrated map copy named **…_map.kmz**. An already calibrated KMZ keeps its calibration and goes straight to selecting the start, without saving another copy.
 4. Click the centre of the start triangle.
 5. Click the centre of any control circle. **Zoom in until the printed colour is clearly visible, then click in the middle of the coloured ring stroke where the map background is white.** Radius and colour are sampled together; scanning starts automatically.
 6. Review the small blue markers. **S** downloads a ZIP containing both **KMZ and GPX**. Unzip it in Finder or your file manager.

@@ -95,7 +95,7 @@ function update(message){
  search.style.display==='block'?'Skriv ort eller latitud, longitud. Enter: sök · Esc: avbryt.':
  state.phase==='anchor_image'&&!showingImage?'2 · OpenTopoMap. G: sök ort · Tab: tillbaka till kartbilden och välj förankringspunkten.':
  state.phase==='anchor_map'&&showingImage?'2 · Klicka för att välja om bildpunkten, eller Tab: välj motsvarande plats i OpenTopoMap.':
- state.phase==='calibrate'&&!state.anchor?'3 · KMZ-kartans georeferering används direkt. F: hela kartan · S: spara kartkopia och välj start.':instructions[state.phase];
+ instructions[state.phase];
  notice.textContent=state.notice;$('welcome').style.display=state.phase==='empty'?'flex':'none';schedule();
 }
 function snapshot(){return clone(Object.fromEntries(['phase','matrix','anchor','anchorPixel','points','selected','radius','color','ringCenter'].map(k=>[k,state[k]])));}
@@ -288,7 +288,7 @@ async function load(file){
   if(generation!==loadGeneration)return;
   validatePoints(data.points||[],data.source.width,data.source.height);
   Object.assign(state,{source:data.source,name:file.name,width:data.source.width,height:data.source.height,matrix:data.matrix,
-   phase:data.points?.length?'review':data.matrix?'calibrate':'anchor_image',anchor:null,anchorPixel:null,points:data.points||[],history:[],selected:-1,
+   phase:data.points?.length?'review':data.matrix?'start':'anchor_image',anchor:null,anchorPixel:null,points:data.points||[],history:[],selected:-1,
    radius:data.points?.find(p=>p.kind==='control')?.radius||null,color:null,ringCenter:null,beforeReference:null,pending:null,dirty:false});
   showingImage=!state.matrix;state.imageView={x:state.width/2,y:state.height/2,scale:1};fit();
   link.style.display='none';if(downloadURL){URL.revokeObjectURL(downloadURL);downloadURL=null;}state.download=null;
