@@ -1,63 +1,67 @@
 {
-  "verified_at": "2026-11-07T19:14:36.281919+00:00",
-  "html_sha256": "0312dadcfbcf3083508ff64a99bd8b39a5989374aae9daeedf73a7c56fc0de72",
+  "verified_at": "2026-11-08T02:42:40.993218+00:00",
+  "html_sha256": "691aea22192836c0765fe642ce500820a400a8f04a48ac7430da69723d52a220",
   "browser_reports": [
     {
       "browser": "chrome",
       "version": "157.0.8103.39",
-      "html_sha256": "0312dadcfbcf3083508ff64a99bd8b39a5989374aae9daeedf73a7c56fc0de72",
+      "html_sha256": "691aea22192836c0765fe642ce500820a400a8f04a48ac7430da69723d52a220",
       "tests": [
         {
           "name": "self-contained file loads offline, Stockholm, no buttons, visible status",
-          "milliseconds": 400
+          "milliseconds": 408
         },
         {
           "name": "PNG opens, place text is visible, keyboard commands do not fire while typing",
-          "milliseconds": 1940
+          "milliseconds": 1635
         },
         {
           "name": "one anchor after extreme zoom auto-fits; real corner drag preserves anchor",
-          "milliseconds": 4359
+          "milliseconds": 9850
         },
         {
           "name": "deep zoom preserves source location and georeferencing",
-          "milliseconds": 3576
+          "milliseconds": 1962
         },
         {
           "name": "georeferenced KMZ imports without recalibration and saves a map copy",
-          "milliseconds": 852
+          "milliseconds": 1378
         },
         {
           "name": "ring clicks auto-scan, find three controls, two triangles and one finish",
-          "milliseconds": 1608
+          "milliseconds": 1035
         },
         {
           "name": "manual ring editing, selected thick ring, delete, undo and extra start",
-          "milliseconds": 1445
+          "milliseconds": 1096
         },
         {
           "name": "ring-template cancel preserves points; invalid white edge does not scan",
-          "milliseconds": 560
+          "milliseconds": 481
         },
         {
           "name": "successful rescan preserves manual starts and can be undone",
-          "milliseconds": 809
+          "milliseconds": 770
         },
         {
           "name": "unsaved file-open guard and small-screen status remain visible",
-          "milliseconds": 885
+          "milliseconds": 695
         },
         {
           "name": "Tuna Livelox real map, same manual ring sample, automatic OpenCV scan",
-          "milliseconds": 18481
+          "milliseconds": 14361
         },
         {
           "name": "exported KMZ restores editable points and exact calibration",
-          "milliseconds": 1761
+          "milliseconds": 730
         },
         {
           "name": "invalid file rolls back without losing current map",
-          "milliseconds": 689
+          "milliseconds": 110
+        },
+        {
+          "name": "real Stangtjarn rescan removes cross-hatching rings and false starts",
+          "milliseconds": 10323
         }
       ],
       "errors": [],
@@ -68,7 +72,24 @@
         "controls": 8,
         "starts": 1,
         "waypoints_only": true,
-        "milliseconds": 1681.7000000476837
+        "milliseconds": 1124.7999999523163
+      },
+      "hatching": {
+        "before_points": 67,
+        "after_points": 21,
+        "controls": 19,
+        "starts": 1,
+        "finishes": 1,
+        "hatched_area_points": 0,
+        "calibration_preserved": true,
+        "scan": {
+          "raw": 20,
+          "radius": 40.148999272077646,
+          "controls": 19,
+          "starts": 1,
+          "waypoints_only": true,
+          "milliseconds": 1919.0999999046326
+        }
       },
       "offline": true,
       "independent_audit": {
@@ -99,70 +120,91 @@
     {
       "browser": "webkit",
       "version": "27.2",
-      "html_sha256": "0312dadcfbcf3083508ff64a99bd8b39a5989374aae9daeedf73a7c56fc0de72",
+      "html_sha256": "691aea22192836c0765fe642ce500820a400a8f04a48ac7430da69723d52a220",
       "tests": [
         {
           "name": "self-contained file loads offline, Stockholm, no buttons, visible status",
-          "milliseconds": 317
+          "milliseconds": 764
         },
         {
           "name": "PNG opens, place text is visible, keyboard commands do not fire while typing",
-          "milliseconds": 304
+          "milliseconds": 552
         },
         {
           "name": "one anchor after extreme zoom auto-fits; real corner drag preserves anchor",
-          "milliseconds": 399
+          "milliseconds": 838
         },
         {
           "name": "deep zoom preserves source location and georeferencing",
-          "milliseconds": 600
+          "milliseconds": 615
         },
         {
           "name": "georeferenced KMZ imports without recalibration and saves a map copy",
-          "milliseconds": 202
+          "milliseconds": 365
         },
         {
           "name": "ring clicks auto-scan, find three controls, two triangles and one finish",
-          "milliseconds": 960
+          "milliseconds": 1179
         },
         {
           "name": "manual ring editing, selected thick ring, delete, undo and extra start",
-          "milliseconds": 372
+          "milliseconds": 377
         },
         {
           "name": "ring-template cancel preserves points; invalid white edge does not scan",
-          "milliseconds": 267
+          "milliseconds": 277
         },
         {
           "name": "successful rescan preserves manual starts and can be undone",
-          "milliseconds": 402
+          "milliseconds": 483
         },
         {
           "name": "unsaved file-open guard and small-screen status remain visible",
-          "milliseconds": 236
+          "milliseconds": 435
         },
         {
           "name": "Tuna Livelox real map, same manual ring sample, automatic OpenCV scan",
-          "milliseconds": 7998
+          "milliseconds": 10002
         },
         {
           "name": "exported KMZ restores editable points and exact calibration",
-          "milliseconds": 1803
+          "milliseconds": 1127
         },
         {
           "name": "invalid file rolls back without losing current map",
-          "milliseconds": 299
+          "milliseconds": 27
+        },
+        {
+          "name": "real Stangtjarn rescan removes cross-hatching rings and false starts",
+          "milliseconds": 6743
         }
       ],
       "errors": [],
       "renderer": "webgl",
       "scan": {
-        "raw": 10,
+        "raw": 9,
         "radius": 28.440000534057617,
-        "controls": 9,
+        "controls": 8,
         "starts": 1,
         "waypoints_only": true,
-        "milliseconds": 1699
+        "milliseconds": 1863
+      },
+      "hatching": {
+        "before_points": 67,
+        "after_points": 21,
+        "controls": 19,
+        "starts": 1,
+        "finishes": 1,
+        "hatched_area_points": 0,
+        "calibration_preserved": true,
+        "scan": {
+          "raw": 20,
+          "radius": 38.70450087231846,
+          "controls": 19,
+          "starts": 1,
+          "waypoints_only": true,
+          "milliseconds": 1382
+        }
       },
       "offline": true,
       "independent_audit": {
@@ -198,7 +240,7 @@
       "fullscreen": true,
       "initial_click_opens_file": true,
       "place_search_passed": true,
-      "successful_map_tiles": 48,
+      "successful_map_tiles": 56,
       "errors": []
     },
     {
